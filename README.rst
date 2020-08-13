@@ -47,7 +47,12 @@ Running gwcd from container
 
     $ docker run --rm -v /path/to/wigocontainerdir:/data mrummuka/gwcd:latest
 
-.. note:: Dockerized version of gwcd currently assumes that wherigo container is found from /path/to/wigocontainerdir/ (can be changed) named as **wigo.gwc** (cannot be changed)
+.. note:: Dockerized version of gwcd currently assumes that wherigo container is found from /path/to/wigocontainerdir/ (can be changed) named as **wigo.gwc** (cannot be changed). The resulting `cartridge.luac` will be written into /data and thus end up in /path/to/wigocontainerdir
+
+You can however mount in whatever file as wigo.gwc if you wish, like so
+::
+
+    $ docker run --rm -v /path/to/wigocontainerdir:/data -v /foo/bar/baz.gwc:/data/wigo.gwc mrummuka/gwcd:latest
 
 
 
